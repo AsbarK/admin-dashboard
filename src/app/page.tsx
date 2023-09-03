@@ -1,4 +1,5 @@
 "use client"
+import { ModeToggle } from "@/components/modeToggleButton"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
@@ -7,6 +8,7 @@ export default function Home() {
   if (session) {
     return (
       <>
+      <ModeToggle></ModeToggle>
         {/* Signed in as {session} <br /> */}
         {console.log(session.user)}
         <button onClick={() => signOut()}>Sign out</button>
@@ -15,6 +17,7 @@ export default function Home() {
   }
   return (
     <>
+      <ModeToggle></ModeToggle>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </>
